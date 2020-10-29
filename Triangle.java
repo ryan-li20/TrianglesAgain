@@ -21,14 +21,6 @@ public class Triangle{
     return x4;
   }
 
-  public double getPerimeter(Point a, Point b, Point c){
-    double side1 = a.distanceTo(b);
-    double side2 = b.distanceTo(c);
-    double side3 = c.distanceTo(a);
-    double finalside = side1 + side2 + side3;
-    return round(finalside);
-  }
-
   public double getPerimeter(){
     Point a = this.v1;
     Point b = this.v2;
@@ -37,6 +29,18 @@ public class Triangle{
     double side2 = b.distanceTo(c);
     double side3 = c.distanceTo(a);
     double finalside = side1 + side2 + side3;
-    return round(finalside);
+    return finalside;
+  }
+
+  public double getArea(){
+    Point a = this.v1;
+    Point b = this.v2;
+    Point c = this.v3;
+    double side1 = a.distanceTo(b);
+    double side2 = b.distanceTo(c);
+    double side3 = c.distanceTo(a);
+    double semi = (side1 + side2 + side3) / 2.0;
+    double area = Math.sqrt(semi*(semi - side1)*(semi - side2)*(semi - side3));
+    return area;
   }
 }
