@@ -18,4 +18,15 @@ public class Point{
    public double getY(){
      return y;
    }
+
+   public double distanceTo(Point other){
+     double deltaX = Math.abs(this.x - other.x);
+     double deltaY = Math.abs(this.y - other.y);
+     double dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+     return dist;
+   }
+
+   public boolean equals(Point other){
+     return(this.x == other.x && this.y == other.y);
+   }
 }
